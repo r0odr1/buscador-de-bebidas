@@ -1,5 +1,5 @@
 import type { StateCreator } from "zustand"
-import { getCategories } from "../services/RecipiesService"
+import { getCategories, getRecipies } from "../services/RecipiesService"
 import type { Categories, SearchFilter } from "../types"
 
 export type RecipiesSliceType = {
@@ -20,6 +20,6 @@ export const createRecipiesSlice : StateCreator<RecipiesSliceType> = (set) => ({
   },
 
   searchRecipies: async (filters) => {
-    console.log(filters);
+    await getRecipies(filters)
   }
 })
