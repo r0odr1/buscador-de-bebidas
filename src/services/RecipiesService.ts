@@ -34,7 +34,6 @@ export async function getRecipies(filters : SearchFilter) {
 }
 
 export async function getRecipiesById(id : Drink['idDrink']) {
-  console.log('desde el servicio',id);
   
   const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
   const  { data } = await axios(url)
