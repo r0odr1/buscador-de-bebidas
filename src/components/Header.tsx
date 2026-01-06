@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 export default function Header() {
   return (
@@ -8,6 +8,18 @@ export default function Header() {
           <div>
             <img className="w-32" src="/logo.svg" alt="logotipo" />
           </div>
+
+          <nav className="flex gap-4">
+            <Link
+              to="/"
+              className="text-white uppercase font-bold"
+            >Inicio</Link>
+
+            <Link
+              to="/favoritos"
+              className="text-white uppercase font-bold"
+            >Favoritos</Link>
+          </nav>
 
 
         </div>
