@@ -102,7 +102,7 @@ export default function Header() {
                 name="category"
                 className="bg-amber-50 p-3 w-full rounded-lg focus:outline-none"
                 onChange={handleChange}
-                value={searchFilters.ingredient}
+                value={searchFilters.category}
               >
                 <option value="">-- Seleccione --</option>
                 {categories.drinks.map(category => (
