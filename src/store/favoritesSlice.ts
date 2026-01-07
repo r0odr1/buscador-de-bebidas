@@ -8,7 +8,6 @@ export type FavoritesSliceType = {
   handleClickFavorite: (recipe: Recipe) => void
   favoriteExists: (id: Recipe['idDrink']) => boolean
   loadFromStorage: () => void
-
 }
 
 export const createFavoritesSlice : StateCreator<FavoritesSliceType & RecipiesSliceType & NotificationSliceType, [], [], FavoritesSliceType> = (set, get, api) => ({
