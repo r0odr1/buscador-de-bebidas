@@ -9,13 +9,14 @@ export default function Header() {
     category: ''
   })
 
+  const categories = useAppStore((state) => state.categories)
+  const searchRecipies = useAppStore((state) => state.searchRecipies)
+  const showNotification = useAppStore((state) => state.showNotification)
+
   const { pathname } = useLocation()
   const isHome = useMemo(() => pathname === '/', [pathname])
 
   const fetchCategories = useAppStore((state) => state.fetchCategories)
-  const categories = useAppStore((state) => state.categories)
-  const searchRecipies = useAppStore((state) => state.searchRecipies)
-  const showNotification = useAppStore((state) => state.showNotification)
 
   useEffect(() => {
     fetchCategories()
@@ -24,7 +25,7 @@ export default function Header() {
   const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
     setSearchFilters({
       ...searchFilters,
-      [e.target.name] : [e.target.value]
+      [e.target.name] : e.target.value
     })
   }
 

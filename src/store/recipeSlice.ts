@@ -36,7 +36,7 @@ export const createRecipiesSlice : StateCreator<RecipiesSliceType & FavoritesSli
     set({
       drinks
     })
-    
+
   },
 
   selectRecipe: async (id) => {
@@ -50,7 +50,6 @@ export const createRecipiesSlice : StateCreator<RecipiesSliceType & FavoritesSli
   closeModal: async () => {
     set({
       modal: false,
-      selectedRecipe: {} as Recipe
     })
   }
 })
