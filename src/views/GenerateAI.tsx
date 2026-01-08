@@ -48,7 +48,7 @@ export default function GenerateAI() {
             <input
               name="prompt"
               id="prompt"
-              className="bg-white/10 border border-white/20 text-white placeholder-white/50 p-5 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-400/50 focus:border-purple-400 transition-all duration-300 pr-16"
+              className="bg-white/10 border border-purple-300 text-white placeholder-white/50 p-5 rounded-xl w-full focus:outline-none focus:ring-2 focus:ring-purple-400/50 focus:border-purple-400 transition-all duration-300 pr-16"
               placeholder="Describe tu cocktail ideal. Ej: Bebida con Tequila y Fresa, dulce y refrescante"
             />
             <button
