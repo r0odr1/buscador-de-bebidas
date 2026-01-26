@@ -8,12 +8,19 @@ export default function DrinkCard({drink} : DrinkCardProps) {
 
   const selectRecipe = useAppStore((state) => state.selectRecipe)
 
+  // Proxy para evitar el bloqueo 403 de hotlinking
+  const imageUrl = `https://images.weserv.nl/?url=${encodeURIComponent(drink.strDrinkThumb)}&default=placeholder.jpg`;
+
   return (
     <div className="group relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 hover:border-white/30">
       <div className="relative overflow-hidden">
         <img
-          src={drink.strDrinkThumb}
+          src={imageUrl}
           alt={`Imagen de ${drink.strDrink}`}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          crossOrigin="anonymous"
+          decoding="async"
           className="hover:scale-125 transition-transform hover:rotate-2 duration-600"
         />
       </div>
