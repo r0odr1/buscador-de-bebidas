@@ -31,6 +31,10 @@ export default function Modal() {
     return ingredients
   }
 
+  const imageUrl = selectedRecipe?.strDrinkThumb
+  ? `https://images.weserv.nl/?url=${encodeURIComponent(selectedRecipe.strDrinkThumb)}&default=placeholder.jpg`
+  : '';
+
   return (
     <>
       <Transition appear show={modal} as={Fragment}>
@@ -68,7 +72,7 @@ export default function Modal() {
                         </Dialog.Title>
 
                         <img
-                          src={selectedRecipe.strDrinkThumb}
+                          src={imageUrl}
                           alt={`Imagen de ${selectedRecipe.strDrink}`}
                           className='mx-auto w-96 object-cover rounded-xl shadow-2xl border border-white/10 mb-6'
                         />
